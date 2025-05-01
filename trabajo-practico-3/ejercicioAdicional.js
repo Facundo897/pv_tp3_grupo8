@@ -9,7 +9,7 @@ const productos = [
     { descripcion: "Microfono", precio: 20000 }
 ];
 
-//1 Mostrar en consola cada producto en el formato: "Producto: [descripción] - Precio: $[precio]", usando forEach.
+//1 - Mostrar en consola cada producto en el formato: "Producto: [descripción] - Precio: $[precio]", usando forEach.
 console.log("------1.Lista de productos: ------");
 productos.forEach (producto => {
     console.log(`Producto: ${producto.descripcion} - Precio: $${producto.precio}`);
@@ -33,4 +33,23 @@ console.log("------3.Productos con IVA incluido:------");
 productosConIVA.forEach (producto => {
     console.log(`Producto: ${producto.descripcion} - Precio: $${producto.precio}`);
 });
+
+console.log("Productos con IVA:");
+console.log(productosConIVA);
+
+// 4 - Ordenar por precio (menor a mayor)
+productos.sort((a, b) => a.precio - b.precio);
+console.log("Productos ordenados:");
+console.log(productos);
+
+// 5 - Agregar nuevo producto
+productos.push({ descripcion: "Parlante Bluetooth", precio: 59000.90 });
+console.log("Producto agregado:");
+console.log(productos);
+
+// 6 - Eliminar el más barato
+productos.sort((a, b) => a.precio - b.precio);
+productos.shift();
+console.log("Después de eliminar el más barato:");
+console.log(productos);
 
