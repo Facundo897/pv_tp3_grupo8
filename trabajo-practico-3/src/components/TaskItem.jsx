@@ -1,11 +1,11 @@
-function TaskItem({ tarea, onToggle, onDelete }) {
+function TaskItem({ tareas, toggleComplete, removeTask }) {
     return (
-    <li style={{ textDecoration: tarea.completado ? 'line-through' : 'none' }}>
-        {tarea.texto}
-        <button onClick={() => onToggle(tarea.id)}>
-        {tarea.completado ? 'Desmarcar' : 'Realizada'}
+    <li style={{ textDecoration: tareas.completado ? 'line-through' : 'none' }}>
+        {tareas.texto}
+        <button onClick={() => toggleComplete(tareas.id)}>
+        {tareas.completado ? 'Desmarcar' : 'Realizada'}
         </button>
-        <button onClick={() => onDelete(tarea.id)}>Eliminar</button>
+        <button onClick={() => removeTask(tareas.id)}>Eliminar</button>
     </li>
     );
 }

@@ -25,7 +25,7 @@ function App() {
     <div className="app-container">
       <h1>Lista de Tareas</h1>
       <TaskInput onAdd={agregarTarea} />
-      <TaskList tareas={tareas} onToggle={toggleTarea} onDelete={eliminarTarea} />
+      <TaskList tareas={tareas} toggleComplete={toggleTarea} removeTask={eliminarTarea} />
     </div>
   );
 }
