@@ -7,19 +7,13 @@ function App() {
   const [tareas, setTareas] = useState([]);
 
   const agregarTarea = (texto) => {
-    const nuevaTarea = {
-      id: Date.now(),
-      texto,
-      completado: false
-    };
+    const nuevaTarea = { id: Date.now(), texto, completado: false };
     setTareas([...tareas, nuevaTarea]);
   };
 
   const toggleTarea = (id) => {
     setTareas(
-      tareas.map((t) =>
-        t.id === id ? { ...t, completado: !t.completado } : t
-      )
+      tareas.map((t) => t.id === id ? { ...t, completado: !t.completado } : t)
     );
   };
 
